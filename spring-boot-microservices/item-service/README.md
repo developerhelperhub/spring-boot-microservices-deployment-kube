@@ -1,20 +1,13 @@
+
+# Build micorservices
+
+## Dev Build and Deployment Script Available "deployment/dev/README"
+## Prod Build and Deployment Script Available "deployment/prod/README"
+
+Verify the process running on locally
 ```shell
-docker build -f DockerfileDev -t  item-service .
+lsof -i -P | grep 8081
 ```
 
-```shell
-docker build -f DockerfileProd -t  item-service .
-```
-
-```shell
-docker run --name item-service -d -p 5001:8080 item-service
-curl http://localhost:5001/items
-```
-
-```shell
-docker logs -f item-service
-```
-
-```shell
-sudo lsof -i -P | grep 5001
-```
+## Reference
+* https://docs.spring.io/spring-boot/how-to/build.html#howto.build.generate-info

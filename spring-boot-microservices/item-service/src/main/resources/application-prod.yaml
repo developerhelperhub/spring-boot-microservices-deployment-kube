@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: mes-item-service
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health
+  endpoint:
+    health:
+      show-details: "when-authorized"
+      roles: "admin"
+      probes:
+        enabled: true
+  info:
+    java:
+      enabled: true
+    env:
+      enabled: true
+    build:
+      enabled: true
+
+info:
+  app:
+    encoding: "@project.build.sourceEncoding@"
+    java:
+      source: "@java.version@"
+      target: "@java.version@"

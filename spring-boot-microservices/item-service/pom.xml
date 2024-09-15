@@ -5,11 +5,11 @@
 	<parent>
 		<groupId>com.developerhelperhub.tutorial.springboot.microservices</groupId>
 		<artifactId>microservice-ecommerce-system</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../microservice-ecommerce-system/pom.xml</relativePath>
 	</parent>
 	<artifactId>item-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0.1-SNAPSHOT</version>
 	<name>Item Service</name>
 	<description>This project guides to run sample item service APIs</description>
 
@@ -19,7 +19,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -41,6 +44,11 @@
 						<groupId>org.springframework.boot</groupId>
 						<artifactId>spring-boot-maven-plugin</artifactId>
 					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
@@ -51,6 +59,11 @@
 					<plugin>
 						<groupId>org.springframework.boot</groupId>
 						<artifactId>spring-boot-maven-plugin</artifactId>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
 					</plugin>
 
 					<plugin>

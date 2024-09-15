@@ -11,4 +11,4 @@ COPY target/app.jar /app/app.jar
 EXPOSE 8080
 
 #Command to run the application
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/app.jar", "--spring.profiles.active=dev"]

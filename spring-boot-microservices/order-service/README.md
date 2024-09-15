@@ -1,27 +1,13 @@
+
+# Build micorservices
+
+## Dev Build and Deployment Script Available "deployment/dev/README"
+## Prod Build and Deployment Script Available "deployment/prod/README"
+
+Verify the process running on locally
 ```shell
-mvn clean install
-docker build -f DockerfileDev -t  order-service .
+lsof -i -P | grep 8082
 ```
 
-```shell
- mvn -Pnative native:compile
-docker build -f DockerfileProd -t  order-service .
-```
-
-```shell
-docker run --name order-service -d -p 5002:8080 order-service
-curl http://localhost:5002/orders
-```
-
-```shell
-docker logs -f order-service
-```
-
-```shell
-docker stop  order-service
-docker rm  order-service
-```
-
-```shell
-lsof -i -P | grep 8080
-```
+## Reference
+* https://docs.spring.io/spring-boot/how-to/build.html#howto.build.generate-info

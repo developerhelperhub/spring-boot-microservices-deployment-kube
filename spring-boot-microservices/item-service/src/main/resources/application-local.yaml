@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: mes-item-service
+
+server:
+  port: 8081
+
+logging:
+  level:
+    org:
+      springframework:
+        web: TRACE
+        boot:
+          actuate: TRACE
+    com:
+      developerhelperhub: TRACE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health
+  endpoint:
+    health:
+      show-details: "always"
+      roles: "admin"
+      probes:
+        enabled: true
+  info:
+    java:
+      enabled: true
+    env:
+      enabled: true
+    build:
+      enabled: true
+
+info:
+  app:
+    encoding: "@project.build.sourceEncoding@"
+    java:
+      source: "@java.version@"
+      target: "@java.version@"

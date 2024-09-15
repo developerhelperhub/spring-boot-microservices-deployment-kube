@@ -1,0 +1,28 @@
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: emc-app-ingress
+  namespace: microservices
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: mes.app.com
+      http:
+        paths:
+          - path: /order-service(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: mes-order-service
+                port:
+                  number: 8080
+          - path: /item-service(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: mes-item-service
+                port:
+                  number: 8080

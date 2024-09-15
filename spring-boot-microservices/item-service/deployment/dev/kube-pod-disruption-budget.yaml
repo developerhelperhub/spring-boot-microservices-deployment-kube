@@ -1,0 +1,9 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: mes-item-service-pdb
+spec:
+  minAvailable: 2  # Ensure at least 2 pods are always running
+  selector:
+    matchLabels:
+      app: mes-item-service

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mes-item-service
+spec:
+  replicas: 2  # Number of pods to run
+  selector:
+    matchLabels:
+      app: mes-item-service
+      type: service
+      env: prod
+  template:
+    metadata:
+      labels:
+        app: mes-item-service
+        type: service
+        env: prod
+    spec:
+      containers:
+        - name: mes-item-service
+          image: mes-item-service:latest  # Docker image
+          ports:
+            - containerPort: 8080
