@@ -19,6 +19,4 @@ public class StartupHealthIndicator implements HealthIndicator {
             return Health.down().withDetail("startup", "In Progress").build();
         }
     }
-
-
 }

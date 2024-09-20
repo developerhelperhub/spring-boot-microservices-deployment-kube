@@ -20,6 +20,7 @@ spec:
         app: mes-item-service
         type: service
         env: dev
+        version: 1.0.0.1-SNAPSHOT
     spec:
       containers:
         - name: mes-item-service
